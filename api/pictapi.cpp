@@ -7,6 +7,7 @@ using namespace pictcore;
 
 //
 // forward declarations
+// these are necessary in C++
 //
 void generate( Model* model );
 
@@ -19,7 +20,7 @@ PICT_HANDLE
 API_SPEC
 PictCreateTask()
 {
-    Task* taskObj = new Task();
+    void* taskObj = new Task();
     return( static_cast<PICT_HANDLE>( taskObj ) );
 };
 
@@ -45,7 +46,7 @@ PICT_RET_CODE
 API_SPEC
 PictAddExclusion
     (
-    IN const PICT_HANDLE         task,
+    IN PICT_HANDLE         task,
     IN const PICT_EXCLUSION_ITEM exclusionItems[],
     IN       size_t              exclusionItemCount
     )
