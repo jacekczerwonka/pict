@@ -7,7 +7,7 @@ using namespace pictcore;
 
 //
 // forward declarations
-// these are necessary in C++
+// these are necessary in C++ because the parser is linear and only understands what it already saw
 //
 void generate( Model* model );
 
